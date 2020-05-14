@@ -1,7 +1,10 @@
 package com.laptrinhjavaweb.jdbc.controller.admin;
 
+import com.laptrinhjavaweb.jdbc.model.UserModel;
+
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +20,8 @@ public class HomeController extends HttpServlet {
   private static final long serialVersionUID = -9156265053917249323L;
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    RequestDispatcher rd = request.getRequestDispatcher("/views/admin/home.jsp");
+    rd.forward(request, response);
   }
 
   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
